@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/login.css" />
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css"/>
-<!--    <script src="../js/auth.js"></script> TODO: Add functionality -->
+    <script src="js/auth.js"></script> <!-- TODO: Add functionality-->
+    <script src="js/app.js" defer></script>
+    <script src="js/interactions.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
-    <script src="js/app.js" defer></script>
-    <script src="js/interactions.js" defer></script>
 </head>
 <body class="flow-page">
 
@@ -28,14 +28,14 @@
 
         <p id="login-notice" class="login-notice" role="status" hidden></p>
 
-        <!-- Shown by js/auth.js instead of the form when someone is already signed in -->
+<!--        Signed in status -->
         <div id="login-signedin" class="login-signedin" hidden>
             <p>You are signed in as <strong id="signedin-name"></strong>.</p>
             <a class="pill-btn teal" href="index.html">Continue to Stacks</a>
             <a class="sign-out pill-btn outline" href="login.html">Sign out</a>
         </div>
 
-        <!-- Handled locally by js/auth.js. When a backend exists, point action/method at it. -->
+<!--         Authentication handled somewhat by auth.js  -->
         <form id="login-form" action="index.html" method="post" novalidate>
             <div class="login-field">
                 <label for="login-username">Username</label>

@@ -14,7 +14,7 @@
 
     /* TAG PICKER DROPDOWN
        The add/remove mechanism (hidden checkbox + :has()) in components.css
-       Uses HTMLLIELEMENT interface
+       Uses HTMLLIELEMENT interface and DOM Traversal to browse through tags
        Rules when option list is visible:
          - opens when the search field gets focus/is clicked /is typed in
          - filters options as you type
@@ -342,8 +342,10 @@
 
     /* CONFIRMATION DIALOGS
     Currently inside details (Delete), and upload (upload, cancel)
+    Primarily uses event delegation by adding listeners attached to the document.
     Handled by the SweetAlerts2 library*/
     function initConfirmDialogs() {
+        // delegates this task to finding elements matching data-confirm
         document.addEventListener("click", (e) => {
             const opener = e.target.closest("[data-confirm]");
             if (!opener) {
