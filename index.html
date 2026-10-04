@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Home · Stacks</title>
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/interactions.js" defer></script>
+</head>
+<body class="flow-page">
+
+<header class="flow-header">
+    <a class="brand" href="index.html">Stacks</a>
+    <form class="header-search" role="search" action="search.html" method="get">
+        <label for="header-q" class="visually-hidden">Search Stacks</label>
+        <input class="search-field" id="header-q" name="q" type="search" placeholder='Try "textbook"' />
+        <button class="header-search-btn pill-btn teal" type="submit">Search</button>
+    </form>
+    <a class="sign-out pill-btn teal" href="login.html">Sign out?</a>
+</header>
+
+<main class="flow-main">
+    <div class="home-logo">
+        <img src="img/logo.png" alt="AppName logo" />
+    </div>
+
+    <h1 class="home-welcome">Welcome to Stacks!</h1>
+
+    <nav class="home-nav-row" aria-label="Library shortcuts">
+        <a class="home-nav-link pill-btn teal-wash" href="library.html">My Library</a>
+
+        <form class="home-search-form" id="home-search-form" role="search" action="search.html" method="get">
+            <label for="library-search" class="visually-hidden">Search your library</label>
+            <input class="search-input search-field" id="library-search" name="q" type="search" placeholder="Search..."
+                   data-filter-target=".home-recent .textbook-grid" />
+        </form>
+
+        <button class="home-nav-link pill-btn gold-wash" type="submit" form="home-search-form">Browse</button>
+    </nav>
+
+    <section class="home-recent" aria-labelledby="recently-visited">
+        <h2 id="recently-visited">Recently Visited:</h2>
+
+        <p class="no-results" role="status" aria-live="polite" hidden>No recent textbooks match your search. Press Enter to search the whole library.</p>
+        <div class="textbook-grid">
+            <a class="textbook-card card-cover" href="details.html" data-title="Textbook 1" data-subjects="subject1">
+                <img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" />
+                <span class="textbook-label card-label">Textbook 1</span>
+            </a>
+            <a class="textbook-card card-cover" href="details.html" data-title="Textbook 2" data-subjects="subject1 subject2">
+                <img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" />
+                <span class="textbook-label card-label">Textbook 2</span>
+            </a>
+            <a class="textbook-card card-cover" href="details.html" data-title="Textbook 3" data-subjects="subject1 subject2 subject3">
+                <img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" />
+                <span class="textbook-label card-label">Textbook 3</span>
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="flow-footer">
+    <a class="footer-help pill-btn outline" href="#">Help?</a>
+    <div class="footer-theme-group">
+        <button class="theme-btn theme-dark" type="button" aria-label="Switch to dark mode" aria-pressed="true">⏾</button>
+        <button class="theme-btn theme-light" type="button" aria-label="Switch to light mode" aria-pressed="false">☼</button>
+    </div>
+    <div class="footer-logo">
+        <img src="img/logo.png" alt="AppName logo" style="width:100%;height:100%;object-fit:contain;" />
+    </div>
+</footer>
+
+</body>
+</html>

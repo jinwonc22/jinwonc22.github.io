@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Help · Stacks</title>
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/help.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css"/>
+<!--    <script src="../js/auth.js"></script> TODO: Add functionality  -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/interactions.js" defer></script>
+</head>
+<body class="flow-page">
+
+<header class="flow-header">
+    <a class="back-home pill-btn outline" href="index.html">Back to Home</a>
+    <div class="header-banner hatch" aria-hidden="true"><span class="text-wrapper">Stacks - Help</span></div>
+    <a class="sign-out pill-btn teal" href="login.html">Sign out?</a>
+</header>
+
+<main class="flow-main">
+    <h1>Help</h1>
+    <p class="help-intro">What you can do on each page. The <strong>Help?</strong> button at the bottom of every page brings you straight to that page's section.</p>
+
+    <nav class="help-toc" aria-label="Help topics">
+        <a class="pill-btn outline" href="#help-general">All pages</a>
+        <a class="pill-btn outline" href="#help-login">Sign In</a>
+        <a class="pill-btn outline" href="#help-home">Home</a>
+        <a class="pill-btn outline" href="#help-library">My Library</a>
+        <a class="pill-btn outline" href="#help-details">Textbook Details</a>
+        <a class="pill-btn outline" href="#help-upload">Upload Textbook</a>
+        <a class="pill-btn outline" href="#help-permissions">Sharing &amp; Permissions</a>
+        <a class="pill-btn outline" href="#help-reader">Reader</a>
+        <a class="pill-btn outline" href="#help-search">Search Results</a>
+    </nav>
+
+    <section class="help-section" id="help-general" aria-labelledby="help-general-title">
+        <h2 id="help-general-title">All pages</h2>
+        <ul>
+            <li><strong>Header:</strong> the button on the left takes you back up one level (for example, from a textbook to your library), the search box in the middle searches Stacks (try <em>biology</em> or <em>chemistry</em>), and <strong>Sign out?</strong> ends your session.</li>
+            <li><strong>Footer:</strong> <strong>Help?</strong> opens the help section for the page you are on. The sun and moon buttons are decorative for now; dark mode isn't built yet.</li>
+            <li><strong>Tooltips:</strong> hover over almost anything, or tab to it with the keyboard, to see a short description. Press Escape to dismiss one.</li>
+            <li><strong>Signing in:</strong> optional. No page requires it, and being signed in does not change anything yet. The only button that uses it is <strong>Sign out?</strong>.</li>
+        </ul>
+    </section>
+
+    <section class="help-section" id="help-login" aria-labelledby="help-login-title">
+        <h2 id="help-login-title">Sign In</h2>
+        <ul>
+            <li>Enter a username and password and press <strong>Sign in</strong>. Empty fields and wrong details show a message right above the button.</li>
+            <li>Signing in is optional and does not change anything else in the app yet; it is stored only in this browser until you sign out. <strong>Sign out?</strong> on any page brings you back here.</li>
+        </ul>
+        <a class="help-go pill-btn gold-wash" href="login.html">Go to Sign In</a>
+    </section>
+
+    <section class="help-section" id="help-home" aria-labelledby="help-home-title">
+        <h2 id="help-home-title">Home</h2>
+        <ul>
+            <li><strong>My Library</strong> opens your library.</li>
+            <li>The search box filters the <em>Recently Visited</em> textbooks as you type. Press <strong>Enter</strong> or <strong>Browse</strong> to run a full search on what you typed.</li>
+            <li>Click a recently visited textbook to open its details page.</li>
+        </ul>
+        <a class="help-go pill-btn gold-wash" href="index.html">Go to Home</a>
+    </section>
+
+    <section class="help-section" id="help-library" aria-labelledby="help-library-title">
+        <h2 id="help-library-title">My Library</h2>
+        <ul>
+            <li>The <strong>☰</strong> button opens a sidebar over the page with subject filters and other libraries. Click the dimmed area, the <strong>×</strong>, or press Escape to close it. (The filter buttons and other libraries are placeholders for now.)</li>
+            <li>The search box filters and ranks the textbooks as you type, matching titles and subjects. <strong>Enter</strong> or <strong>Browse</strong> runs a full search on what you typed.</li>
+            <li>Textbooks appear eight at a time. Use <strong>Previous</strong>, <strong>Next</strong> or the page numbers under the grid to see more. Searching starts you back on page 1.</li>
+            <li>The person icon opens sharing and permissions, and the <strong>+</strong> opens the upload page.</li>
+            <li>Click any textbook to see its details. The <strong>Edit</strong> button next to the title is a placeholder.</li>
+        </ul>
+        <a class="help-go pill-btn gold-wash" href="library.html">Go to My Library</a>
+    </section>
+
+    <section class="help-section" id="help-details" aria-labelledby="help-details-title">
+        <h2 id="help-details-title">Textbook Details</h2>
+        <ul>
+            <li>Click the cover or <strong>Open</strong> to read the textbook. <strong>Change Cover</strong> lets you pick a new image.</li>
+            <li>Title, author, publisher and description are editable boxes. Drag the bottom corner of a box to make it taller. Press the <strong>Save</strong> button under a box to keep your change; a “Saved” message confirms it, and the text is still there next time you open this page in the same browser.</li>
+            <li><strong>Subject Tags:</strong> click the tag search to open the list, type to filter it, then click a tag, or press Enter to pick the first match. Arrow keys move through the list and Escape closes it.</li>
+            <li>Chosen tags appear under <em>Included</em>. Click the <strong>−</strong> on a tag to remove it.</li>
+            <li><strong>Delete Book</strong> sits under <strong>Open</strong>. It asks you to confirm in a pop-up; confirming returns you to your library, and <strong>Keep book</strong> closes the pop-up.</li>
+        </ul>
+        <a class="help-go pill-btn gold-wash" href="details.html">Go to Textbook Details</a>
+    </section>
+
+    <section class="help-section" id="help-upload" aria-labelledby="help-upload-title">
+        <h2 id="help-upload-title">Upload Textbook</h2>
+        <ul>
+            <li><strong>Browse</strong> lets you choose a PDF or EPUB file from your computer. (Dragging a file onto the dashed area is not wired up yet.)</li>
+            <li>The preview box stands in for the file you picked. <strong>Change Cover</strong> lets you choose a cover image.</li>
+            <li>Fill in the title, author, publisher and description, and add subject tags the same way as on the details page.</li>
+            <li><strong>Upload</strong> and <strong>Cancel</strong> each ask you to confirm in a pop-up. Confirming either one returns you to your library; <strong>Keep editing</strong> closes the pop-up. Nothing is actually uploaded yet.</li>
+        </ul>
+        <a class="help-go pill-btn gold-wash" href="upload.html">Go to Upload Textbook</a>
+    </section>
+
+    <section class="help-section" id="help-permissions" aria-labelledby="help-permissions-title">
+        <h2 id="help-permissions-title">Sharing &amp; Permissions</h2>
+        <ul>
+            <li>One list shows everyone. The search box filters it by username or initials, and <strong>Browse</strong> clears the search to show everyone again.</li>
+            <li>People with access have an <strong>Edit / View</strong> switch. Choose <strong>Edit</strong> to let them change the library or <strong>View</strong> to let them only look.</li>
+            <li>Click <strong>−</strong> to remove someone's access. They move back to the <strong>Add</strong> state.</li>
+            <li>Click <strong>Add</strong> next to anyone without access to give them View access.</li>
+        </ul>
+        <a class="help-go pill-btn gold-wash" href="permissions.html">Go to Sharing &amp; Permissions</a>
+    </section>
+
+    <section class="help-section" id="help-reader" aria-labelledby="help-reader-title">
+        <h2 id="help-reader-title">Reader</h2>
+        <ul>
+            <li>The left column lists your annotations, each with <strong>Edit</strong> and <strong>Delete</strong>. <strong>Add annotation to current page</strong> is a placeholder for now.</li>
+            <li>The large area in the middle is the page you are reading. The page number shows at the bottom of the screen at all times.</li>
+            <li>The <strong>☰</strong> button on the right opens reader settings over the page: text size, font choice, bookmarks, a link back to the book details, and a page-number box to jump to a page. Click the dimmed area, the <strong>×</strong>, or press Escape to close. (The settings controls are placeholders for now.)</li>
+        </ul>
+        <a class="help-go pill-btn gold-wash" href="reader.html">Go to Reader</a>
+    </section>
+
+    <section class="help-section" id="help-search" aria-labelledby="help-search-title">
+        <h2 id="help-search-title">Search Results</h2>
+        <ul>
+            <li>Type in the search box in the header and press <strong>Search</strong> (or Enter). This is a practice search that only recognises a few words.</li>
+            <li>Try <em>biology</em> or <em>chemistry</em> to see sample results. Any other word shows a friendly "nothing found" message with a link back to your library.</li>
+            <li>The search box on the home and library pages also leads here when you press Enter or <strong>Browse</strong>.</li>
+        </ul>
+        <a class="help-go pill-btn gold-wash" href="search.html">Go to Search Results</a>
+    </section>
+</main>
+
+<footer class="flow-footer">
+    <a class="footer-help pill-btn outline" href="#help-general">Help?</a>
+    <div class="footer-theme-group">
+        <button class="theme-btn theme-dark" type="button" aria-label="Switch to dark mode" aria-pressed="true">⏾</button>
+        <button class="theme-btn theme-light" type="button" aria-label="Switch to light mode" aria-pressed="false">☼</button>
+    </div>
+    <div class="footer-logo">
+        <img src="img/logo.png" alt="AppName logo" style="width:100%;height:100%;object-fit:contain;" />
+    </div>
+</footer>
+
+</body>
+</html>

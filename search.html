@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Search Results · Stacks</title>
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/search.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/search.js" defer></script>
+</head>
+<body class="flow-page">
+
+<header class="flow-header">
+    <a class="back-home pill-btn outline" href="index.html">Back to Home</a>
+    <div class="header-banner hatch" aria-hidden="true"><span class="text-wrapper">Stacks - Search Results</span></div>
+    <form class="header-search" role="search" action="search.html" method="get">
+        <label for="header-q" class="visually-hidden">Search Stacks</label>
+        <input class="search-field" id="header-q" name="q" type="search" placeholder='Try "textbook"' />
+        <button class="header-search-btn pill-btn teal" type="submit">Search</button>
+    </form>
+    <a class="sign-out pill-btn teal" href="login.html">Sign out?</a>
+</header>
+
+<main class="flow-main">
+    <h1>Search Results</h1>
+    <p id="search-summary" role="status" aria-live="polite"></p>
+
+    <!-- Filled in by js/search.js -->
+    <ul id="search-results" class="results-list"></ul>
+
+    <section id="search-empty" class="empty-state" hidden>
+        <h2 id="empty-heading"></h2>
+        <p id="empty-hint"></p>
+        <a class="pill-btn gold-wash empty-link" href="library.html">Browse your library</a>
+    </section>
+
+    <noscript><p>Search results need JavaScript turned on.</p></noscript>
+</main>
+
+<footer class="flow-footer">
+    <a class="footer-help pill-btn outline" href="#">Help?</a>
+    <div class="footer-theme-group">
+        <button class="theme-btn theme-dark" type="button" aria-label="Switch to dark mode" aria-pressed="true">⏾</button>
+        <button class="theme-btn theme-light" type="button" aria-label="Switch to light mode" aria-pressed="false">☼</button>
+    </div>
+    <div class="footer-logo">
+        <img src="img/logo.png" alt="AppName logo" style="width:100%;height:100%;object-fit:contain;" />
+    </div>
+</footer>
+
+</body>
+</html>

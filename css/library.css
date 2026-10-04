@@ -1,0 +1,33 @@
+/* Flow-system, inherits functionality from components.css */
+
+.library-columns { display: block; }
+
+/* Sidebar (left column) */
+.library-sidebar-wrap { flex: 0 0 auto; }
+.sidebar-controls { display: flex; align-items: center; gap: 10px; }
+.icon-upload { background-color: var(--teal-wash); }
+
+.library-sidebar h2 {
+    font-family: "Inter", Helvetica; font-weight: 400; color: var(--ink); font-size: 28px;
+    margin: 0 0 14px;
+}
+.library-sidebar nav { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+.filter-pills, .library-pills { display: flex; flex-direction: column; gap: 10px; }
+.filter-pills .pill-btn, .library-pills .pill-btn { height: 52px; font-size: 20px; justify-content: flex-start; padding: 0 20px; }
+.add-library-btn { height: 60px; font-size: 22px; margin-top: 6px; }
+
+/* Main content (right column) */
+.library-main { min-width: 0; }
+.library-heading-left { display: flex; align-items: center; gap: 16px; }
+.library-heading-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.library-heading-row h1 {
+    font-family: "Inter", Helvetica; font-weight: 400; color: var(--ink); font-size: 36px; margin: 0;
+}
+.edit-btn { height: 52px; padding: 0 24px; font-size: 22px; }
+
+.library-search-row { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+.library-search-row form { flex: 1 1 260px; }
+.search-input { width: 100%; height: 56px; font-size: 22px; padding: 0 20px; }
+.browse-btn { height: 56px; padding: 0 32px; font-size: 22px; flex: 0 0 auto; }
+.icon-add-person { background-color: #e9f6ff; font-size: 22px; }
+.textbook-grid { scroll-margin-top: 110px; }

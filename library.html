@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>My Library · Stacks</title>
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/library.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.6.0/pagination.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.6.0/pagination.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="../js/App.js" defer></script>
+    <script src="js/interactions.js" defer></script>
+</head>
+<body class="flow-page">
+
+<header class="flow-header">
+    <a class="back-home pill-btn outline" href="index.html">Back to Home</a>
+    <div class="header-banner hatch" aria-hidden="true"><span class="text-wrapper">Stacks - Textbook Library</span></div>
+    <form class="header-search" role="search" action="search.html" method="get">
+        <label for="header-q" class="visually-hidden">Search Stacks</label>
+        <input class="search-field" id="header-q" name="q" type="search" placeholder='Try "textbook"' />
+        <button class="header-search-btn pill-btn teal" type="submit">Search</button>
+    </form>
+    <a class="sign-out pill-btn teal" href="login.html">Sign out?</a>
+</header>
+
+<main class="flow-main">
+    <div class="library-columns">
+
+        <div class="library-main">
+            <div class="library-heading-row">
+                <div class="library-heading-left">
+                    <div class="library-sidebar-wrap sidebar-wrap">
+                        <div class="sidebar-controls">
+                            <button type="button" class="sidebar-toggle-label sidebar-toggle-btn"
+                                    aria-label="Show or hide the sidebar"
+                                    aria-expanded="false" aria-controls="library-sidebar-panel">☰</button>
+                        </div>
+
+                        <div class="collapsible overlay-sidebar from-left" hidden>
+                            <aside class="library-sidebar overlay-panel" id="library-sidebar-panel" aria-label="Filter and switch libraries">
+                                <button type="button" class="overlay-close" aria-label="Close the sidebar">×</button>
+                                <h2>Subject Filters:</h2>
+                                <div class="filter-pills">
+                                    <button class="pill-btn outline" type="button">Filter 1</button>
+                                    <button class="pill-btn outline" type="button">Filter 2</button>
+                                    <button class="pill-btn outline" type="button">Filter 3</button>
+                                    <button class="pill-btn outline" type="button">Filter 4</button>
+                                </div>
+
+                                <nav aria-label="Switch libraries">
+                                    <h2>Other Libraries</h2>
+                                    <div class="library-pills">
+                                        <a class="pill-btn outline active" href="library.html" aria-current="page">My Library</a>
+                                        <a class="pill-btn outline" href="#">Library 2</a>
+                                        <a class="pill-btn outline" href="#">Library 3</a>
+                                    </div>
+                                    <a class="add-library-btn pill-btn gold-wash" href="#">Add Library</a>
+                                </nav>
+                            </aside>
+                        </div>
+                    </div>
+                    <h1>My Library</h1>
+                </div>
+                <a class="edit-btn pill-btn gold-wash" href="#">Edit</a>
+            </div>
+
+            <div class="library-search-row">
+                <form id="library-search-form" role="search" action="search.html" method="get">
+                    <label for="lib-search" class="visually-hidden">Search this library</label>
+                    <input class="search-input search-field"
+                           id="lib-search" name="q" type="search"
+                           placeholder="Search by title or subject..."
+                           data-filter-target=".library-main .textbook-grid" data-prefill-from-url />
+                </form>
+
+                <button class="browse-btn pill-btn teal" type="submit" form="library-search-form">Browse</button>
+                <a class="icon-circle icon-add-person"
+                   href="permissions.html"
+                   aria-label="Invite people to this library">👤</a>
+                <a class="icon-circle icon-upload"
+                   href="upload.html"
+                   aria-label="Upload a new textbook">+</a>
+            </div>
+
+            <p class="no-results" role="status" aria-live="polite" hidden>No textbooks match your search.</p>
+
+            <section class="textbook-grid" aria-label="Textbooks in My Library" data-page-size="8">
+                <div class="pagination"></div>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 1" data-subjects="subject1"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 1</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 2" data-subjects="subject1 subject2"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 2</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 3" data-subjects="subject1 subject2 subject3"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 3</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 4" data-subjects="subject4"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 4</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 5" data-subjects="subject5"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 5</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 6" data-subjects="subject6"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 6</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 7" data-subjects="subject7"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 7</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 8" data-subjects="subject8"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 8</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 9" data-subjects="subject9"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 9</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 10" data-subjects="subject10"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 10</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 11" data-subjects="subject11"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 11</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 12" data-subjects="subject12"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 12</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 13" data-subjects="subject13"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 13</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 14" data-subjects="subject14"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 14</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 15" data-subjects="subject15"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 15</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 16" data-subjects="subject16"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 16</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 17" data-subjects="subject17"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 17</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 18" data-subjects="subject18"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 18</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 19" data-subjects="subject19"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 19</span></a>
+                <a class="textbook-card card-cover" href="details.html" data-title="Textbook 20" data-subjects="subject20"><img src="img/book.png" alt="Placeholder Textbook, #th Edition" style="width:100%;height:100%;object-fit:cover;" /><span class="textbook-label card-label">Textbook 20</span></a>
+            </section>
+        </div>
+    </div>
+</main>
+
+<footer class="flow-footer">
+    <a class="footer-help pill-btn outline" href="#">Help?</a>
+    <div class="footer-theme-group">
+        <button class="theme-btn theme-dark" type="button" aria-label="Switch to dark mode" aria-pressed="true">⏾</button>
+        <button class="theme-btn theme-light" type="button" aria-label="Switch to light mode" aria-pressed="false">☼</button>
+    </div>
+    <div class="footer-logo">
+        <img src="img/logo.png" alt="AppName logo" style="width:100%;height:100%;object-fit:contain;" />
+    </div>
+</footer>
+
+</body>
+</html>

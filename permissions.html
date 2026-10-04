@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Permissions · Stacks</title>
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/permissions.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/interactions.js" defer></script>
+</head>
+<body class="flow-page">
+
+<header class="flow-header">
+    <a class="back-home pill-btn outline" href="library.html">Back to Library</a>
+    <div class="header-banner hatch" aria-hidden="true"><span class="text-wrapper">Stacks - Share Permissions</span></div>
+    <form class="header-search" role="search" action="search.html" method="get">
+        <label for="header-q" class="visually-hidden">Search Stacks</label>
+        <input class="search-field" id="header-q" name="q" type="search" placeholder='Try "textbook"' />
+        <button class="header-search-btn pill-btn teal" type="submit">Search</button>
+    </form>
+    <a class="sign-out pill-btn teal" href="login.html">Sign out?</a>
+</header>
+
+<main class="flow-main">
+    <h1 class="visually-hidden">Sharing &amp; Permissions</h1>
+
+    <section class="permissions-panel" aria-labelledby="heading-people">
+        <h2 id="heading-people">People &amp; Permissions</h2>
+        <p class="permissions-intro">Search everyone, change what each person can do, or add someone new to this library.</p>
+
+        <div class="permissions-search-row">
+            <label for="search-people" class="visually-hidden">Search people</label>
+            <input class="search-field" id="search-people" name="q" type="search" placeholder="Search..." data-filter-target="#people-list" />
+            <button class="browse-btn pill-btn teal" type="button">Browse</button>
+        </div>
+
+        <p class="no-results" role="status" aria-live="polite" hidden>No people match your search.</p>
+        <div class="people-list" id="people-list">
+            <div class="person-row" data-access="edit">
+                <div class="avatar">MA</div>
+                <div class="username">Username 1</div>
+                <div class="seg-toggle">
+                    <input type="radio" name="perm-1" id="perm-1-edit" value="edit" checked>
+                    <label for="perm-1-edit">Edit</label>
+                    <input type="radio" name="perm-1" id="perm-1-view" value="view">
+                    <label for="perm-1-view">View</label>
+                </div>
+                <button class="remove-btn" type="button" aria-label="Remove access for Username 1">−</button>
+                <button class="add-btn pill-btn gold-wash" type="button" aria-label="Add Username 1 to this library">Add</button>
+            </div>
+            <div class="person-row" data-access="view">
+                <div class="avatar">DK</div>
+                <div class="username">Username 2</div>
+                <div class="seg-toggle">
+                    <input type="radio" name="perm-2" id="perm-2-edit" value="edit">
+                    <label for="perm-2-edit">Edit</label>
+                    <input type="radio" name="perm-2" id="perm-2-view" value="view" checked>
+                    <label for="perm-2-view">View</label>
+                </div>
+                <button class="remove-btn" type="button" aria-label="Remove access for Username 2">−</button>
+                <button class="add-btn pill-btn gold-wash" type="button" aria-label="Add Username 2 to this library">Add</button>
+            </div>
+            <div class="person-row" data-access="view">
+                <div class="avatar">RS</div>
+                <div class="username">Username 3</div>
+                <div class="seg-toggle">
+                    <input type="radio" name="perm-3" id="perm-3-edit" value="edit">
+                    <label for="perm-3-edit">Edit</label>
+                    <input type="radio" name="perm-3" id="perm-3-view" value="view" checked>
+                    <label for="perm-3-view">View</label>
+                </div>
+                <button class="remove-btn" type="button" aria-label="Remove access for Username 3">−</button>
+                <button class="add-btn pill-btn gold-wash" type="button" aria-label="Add Username 3 to this library">Add</button>
+            </div>
+            <div class="person-row" data-access="edit">
+                <div class="avatar">TN</div>
+                <div class="username">Username 4</div>
+                <div class="seg-toggle">
+                    <input type="radio" name="perm-4" id="perm-4-edit" value="edit" checked>
+                    <label for="perm-4-edit">Edit</label>
+                    <input type="radio" name="perm-4" id="perm-4-view" value="view">
+                    <label for="perm-4-view">View</label>
+                </div>
+                <button class="remove-btn" type="button" aria-label="Remove access for Username 4">−</button>
+                <button class="add-btn pill-btn gold-wash" type="button" aria-label="Add Username 4 to this library">Add</button>
+            </div>
+            <div class="person-row" data-access="edit">
+                <div class="avatar">JL</div>
+                <div class="username">Username 5</div>
+                <div class="seg-toggle">
+                    <input type="radio" name="perm-5" id="perm-5-edit" value="edit" checked>
+                    <label for="perm-5-edit">Edit</label>
+                    <input type="radio" name="perm-5" id="perm-5-view" value="view">
+                    <label for="perm-5-view">View</label>
+                </div>
+                <button class="remove-btn" type="button" aria-label="Remove access for Username 5">−</button>
+                <button class="add-btn pill-btn gold-wash" type="button" aria-label="Add Username 5 to this library">Add</button>
+            </div>
+            <div class="person-row" data-access="none">
+                <div class="avatar">AB</div>
+                <div class="username">Username 6</div>
+                <div class="seg-toggle">
+                    <input type="radio" name="perm-6" id="perm-6-edit" value="edit">
+                    <label for="perm-6-edit">Edit</label>
+                    <input type="radio" name="perm-6" id="perm-6-view" value="view" checked>
+                    <label for="perm-6-view">View</label>
+                </div>
+                <button class="remove-btn" type="button" aria-label="Remove access for Username 6">−</button>
+                <button class="add-btn pill-btn gold-wash" type="button" aria-label="Add Username 6 to this library">Add</button>
+            </div>
+            <div class="person-row" data-access="none">
+                <div class="avatar">CW</div>
+                <div class="username">Username 7</div>
+                <div class="seg-toggle">
+                    <input type="radio" name="perm-7" id="perm-7-edit" value="edit">
+                    <label for="perm-7-edit">Edit</label>
+                    <input type="radio" name="perm-7" id="perm-7-view" value="view" checked>
+                    <label for="perm-7-view">View</label>
+                </div>
+                <button class="remove-btn" type="button" aria-label="Remove access for Username 7">−</button>
+                <button class="add-btn pill-btn gold-wash" type="button" aria-label="Add Username 7 to this library">Add</button>
+            </div>
+            <div class="person-row" data-access="none">
+                <div class="avatar">EP</div>
+                <div class="username">Username 8</div>
+                <div class="seg-toggle">
+                    <input type="radio" name="perm-8" id="perm-8-edit" value="edit">
+                    <label for="perm-8-edit">Edit</label>
+                    <input type="radio" name="perm-8" id="perm-8-view" value="view" checked>
+                    <label for="perm-8-view">View</label>
+                </div>
+                <button class="remove-btn" type="button" aria-label="Remove access for Username 8">−</button>
+                <button class="add-btn pill-btn gold-wash" type="button" aria-label="Add Username 8 to this library">Add</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="flow-footer">
+    <a class="footer-help pill-btn outline" href="#">Help?</a>
+    <div class="footer-theme-group">
+        <button class="theme-btn theme-dark" type="button" aria-label="Switch to dark mode" aria-pressed="true">⏾</button>
+        <button class="theme-btn theme-light" type="button" aria-label="Switch to light mode" aria-pressed="false">☼</button>
+    </div>
+    <div class="footer-logo">
+        <img src="img/logo.png" alt="AppName logo" style="width:100%;height:100%;object-fit:contain;" />
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Upload Textbook · Stacks</title>
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/upload.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css"/>
+<!--    <script src="../js/auth.js"></script> TODO: Add functionality -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/interactions.js" defer></script>
+</head>
+<body class="flow-page">
+
+<header class="flow-header">
+    <a class="back-home pill-btn outline" href="library.html">Back to Library</a>
+    <div class="header-banner hatch" aria-hidden="true"><span class="text-wrapper">Stacks - Textbook Upload</span></div>
+    <form class="header-search" role="search" action="search.html" method="get">
+        <label for="header-q" class="visually-hidden">Search Stacks</label>
+        <input class="search-field" id="header-q" name="q" type="search" placeholder='Try "textbook"' />
+        <button class="header-search-btn pill-btn teal" type="submit">Search</button>
+    </form>
+    <a class="sign-out pill-btn teal" href="login.html">Sign out?</a>
+</header>
+
+<main class="flow-main">
+    <h1 class="visually-hidden">Upload a Textbook</h1>
+
+    <section aria-label="Upload a textbook">
+
+        <div class="upload-top">
+            <div class="attach-zone" aria-hidden="true">Attach here</div>
+            <label class="browse-file-btn pill-btn teal" for="file-upload">Browse</label>
+            <input class="visually-hidden" id="file-upload" name="textbook_file" type="file" accept=".pdf,.epub" />
+        </div>
+
+        <div class="upload-layout">
+            <div class="preview-col">
+                <div class="file-preview card-cover hatch">
+                    <span class="card-label">File Preview</span>
+                </div>
+                <label class="change-cover-btn pill-btn outline" for="cover-upload">Change Cover</label>
+                <input class="visually-hidden" id="cover-upload" name="cover_image" type="file" accept="image/*" />
+            </div>
+
+<!--            Fields for adding elements-->
+
+            <div class="upload-fields">
+                <div class="field-group">
+                    <div class="field-label-row">
+                        <label class="field-label" for="up-title">Title</label>
+                    </div>
+                    <textarea class="field-input" id="up-title" name="title" rows="3">Placeholder</textarea>
+                </div>
+
+                <div class="field-group">
+                    <div class="field-label-row">
+                        <label class="field-label" for="up-author">Author</label>
+                    </div>
+                    <textarea class="field-input" id="up-author" name="author" rows="3">Placeholder</textarea>
+                </div>
+
+                <div class="field-group">
+                    <div class="field-label-row">
+                        <label class="field-label" for="up-publisher">Publisher</label>
+                    </div>
+                    <textarea class="field-input" id="up-publisher" name="publisher" rows="3">Placeholder</textarea>
+                </div>
+
+                <div class="field-group">
+                    <div class="field-label-row">
+                        <label class="field-label" for="up-description">Description</label>
+                    </div>
+                    <textarea class="field-input field-tall" id="up-description" name="description">Placeholder</textarea>
+                </div>
+
+<!--                Tags-->
+                <h2 class="tags-heading">Subject Tags:</h2>
+
+                <div class="tags-columns">
+                    <div class="tag-picker">
+                        <label for="tag-search" class="visually-hidden">Search for a subject tag to add</label>
+                        <input class="tag-search search-field" id="tag-search" name="tag_search" type="search" placeholder="Search..." />
+
+                        <ul class="tag-menu">
+                            <li>
+                                <input class="tag-checkbox" type="checkbox" id="tag-biology" name="tags" value="biology" checked>
+                                <label class="tag-option" for="tag-biology">Biology</label>
+                            </li>
+                            <li>
+                                <input class="tag-checkbox" type="checkbox" id="tag-chemistry" name="tags" value="chemistry" checked>
+                                <label class="tag-option" for="tag-chemistry">Chemistry</label>
+                            </li>
+                            <li>
+                                <input class="tag-checkbox" type="checkbox" id="tag-physics" name="tags" value="physics">
+                                <label class="tag-option" for="tag-physics">Physics</label>
+                            </li>
+                            <li>
+                                <input class="tag-checkbox" type="checkbox" id="tag-history" name="tags" value="history">
+                                <label class="tag-option" for="tag-history">History</label>
+                            </li>
+                            <li>
+                                <input class="tag-checkbox" type="checkbox" id="tag-mathematics" name="tags" value="mathematics">
+                                <label class="tag-option" for="tag-mathematics">Mathematics</label>
+                            </li>
+                        </ul>
+
+                        <div class="tag-included">
+                            <h3 class="included-heading">Included:</h3>
+                            <div class="tag-chips">
+                                    <span class="tag-chip chip-biology pill-btn teal-wash">
+                                        Biology
+                                        <label class="remove-tag" for="tag-biology" aria-label="Remove Biology tag">−</label>
+                                    </span>
+                                <span class="tag-chip chip-chemistry pill-btn teal-wash">
+                                        Chemistry
+                                        <label class="remove-tag" for="tag-chemistry" aria-label="Remove Chemistry tag">−</label>
+                                    </span>
+                                <span class="tag-chip chip-physics pill-btn teal-wash">
+                                        Physics
+                                        <label class="remove-tag" for="tag-physics" aria-label="Remove Physics tag">−</label>
+                                    </span>
+                                <span class="tag-chip chip-history pill-btn teal-wash">
+                                        History
+                                        <label class="remove-tag" for="tag-history" aria-label="Remove History tag">−</label>
+                                    </span>
+                                <span class="tag-chip chip-mathematics pill-btn teal-wash">
+                                        Mathematics
+                                        <label class="remove-tag" for="tag-mathematics" aria-label="Remove Mathematics tag">−</label>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="upload-actions">
+            <a class="upload-btn pill-btn teal" href="library.html"
+               data-confirm data-confirm-title="Upload this textbook?"
+               data-confirm-message="Are you sure you want to upload this textbook to your library?"
+               data-confirm-yes="Yes, upload" data-confirm-no="Keep editing">Upload</a>
+            <a class="cancel-btn pill-btn outline" href="library.html"
+               data-confirm data-confirm-tone="danger" data-confirm-title="Cancel this upload?"
+               data-confirm-message="Are you sure? Anything you have entered on this page will be lost."
+               data-confirm-yes="Yes, cancel upload" data-confirm-no="Keep editing">Cancel</a>
+        </div>
+    </section>
+</main>
+
+<footer class="flow-footer">
+    <a class="footer-help pill-btn outline" href="help.html#help-upload">Help?</a>
+    <div class="footer-theme-group">
+        <button class="theme-btn theme-dark" type="button" aria-label="Switch to dark mode" aria-pressed="true">⏾</button>
+        <button class="theme-btn theme-light" type="button" aria-label="Switch to light mode" aria-pressed="false">☼</button>
+    </div>
+    <div class="footer-logo">
+        <img src="img/logo.png" alt="AppName logo" style="width:100%;height:100%;object-fit:contain;" />
+    </div>
+</footer>
+
+</body>
+</html>

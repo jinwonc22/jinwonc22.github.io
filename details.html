@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Textbook Details · Stacks</title>
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/details.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css"/>
+<!--    <script src="../js/auth.js"></script> TODO: Add functionality  -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/interactions.js" defer></script>
+</head>
+<body class="flow-page">
+
+<header class="flow-header">
+    <a class="back-home pill-btn outline" href="library.html">Back to Library</a>
+    <div class="header-banner hatch" aria-hidden="true"><span class="text-wrapper">Stacks - Textbook Details</span></div>
+    <form class="header-search" role="search" action="search.html" method="get">
+        <label for="header-q" class="visually-hidden">Search Stacks</label>
+        <input class="search-field" id="header-q" name="q" type="search" placeholder='Try "textbook"' />
+        <button class="header-search-btn pill-btn teal" type="submit">Search</button>
+    </form>
+    <a class="sign-out pill-btn teal" href="login.html">Sign out?</a>
+</header>
+
+<main class="flow-main">
+    <h1 class="visually-hidden">Textbook Details</h1>
+
+    <div class="details-layout">
+
+        <div class="cover-col">
+            <a class="cover-box card-cover" href="reader.html">
+                <img src="img/book.png" alt="Placeholder Textbook, #th Edition"
+                     style="width:100%;height:100%;object-fit:cover;" />
+                <span class="textbook-label card-label">Textbook [Number]</span>
+            </a>
+            <label class="change-cover-btn pill-btn outline" for="cover-upload">Change Cover</label>
+            <input class="visually-hidden" id="cover-upload" name="cover_image" type="file" accept="image/*" />
+            <a class="open-btn pill-btn teal" href="reader.html">Open</a>
+            <button class="delete-btn pill-btn danger-wash" type="button"
+                    data-confirm data-confirm-tone="danger" data-confirm-href="library.html"
+                    data-confirm-title="Delete this book?"
+                    data-confirm-message="This removes the textbook from your library and can't be undone."
+                    data-confirm-yes="Yes, delete book" data-confirm-no="Keep book">Delete Book</button>
+        </div>
+
+        <div class="details-fields">
+            <section aria-label="Textbook details">
+                <div class="field-group">
+                    <div class="field-label-row">
+                        <label class="field-label" for="field-title">Title</label>
+                    </div>
+                    <textarea class="field-input" id="field-title" name="title" rows="3">Placeholder</textarea>
+                    <div class="field-actions">
+                        <span class="save-status" role="status"></span>
+                        <button class="save-btn pill-btn gold-wash" type="button" aria-controls="field-title">Save</button>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <div class="field-label-row">
+                        <label class="field-label" for="field-author">Author</label>
+                    </div>
+                    <textarea class="field-input" id="field-author" name="author" rows="3">Placeholder</textarea>
+                    <div class="field-actions">
+                        <span class="save-status" role="status"></span>
+                        <button class="save-btn pill-btn gold-wash" type="button" aria-controls="field-author">Save</button>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <div class="field-label-row">
+                        <label class="field-label" for="field-publisher">Publisher</label>
+                    </div>
+                    <textarea class="field-input" id="field-publisher" name="publisher" rows="3">Placeholder</textarea>
+                    <div class="field-actions">
+                        <span class="save-status" role="status"></span>
+                        <button class="save-btn pill-btn gold-wash" type="button" aria-controls="field-publisher">Save</button>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <div class="field-label-row">
+                        <label class="field-label" for="field-description">Description</label>
+                    </div>
+                    <textarea class="field-input field-tall" id="field-description" name="description">Placeholder</textarea>
+                    <div class="field-actions">
+                        <span class="save-status" role="status"></span>
+                        <button class="save-btn pill-btn gold-wash" type="button" aria-controls="field-description">Save</button>
+                    </div>
+                </div>
+
+                <h2 class="tags-heading">Subject Tags:</h2>
+
+                <div class="tags-columns">
+                    <div class="tag-picker">
+                        <label for="tag-search" class="visually-hidden">Search for a subject tag to add</label>
+                        <input class="tag-search search-field" id="tag-search" name="tag_search" type="search" placeholder="Search..." />
+
+                        <ul class="tag-menu">
+                            <li>
+                                <input class="tag-checkbox" type="checkbox" id="tag-biology" name="tags" value="biology" checked>
+                                <label class="tag-option" for="tag-biology">Biology</label>
+                            </li>
+                            <li>
+                                <input class="tag-checkbox" type="checkbox" id="tag-chemistry" name="tags" value="chemistry" checked>
+                                <label class="tag-option" for="tag-chemistry">Chemistry</label>
+                            </li>
+                            <li>
+                                <input class="tag-checkbox" type="checkbox" id="tag-physics" name="tags" value="physics">
+                                <label class="tag-option" for="tag-physics">Physics</label>
+                            </li>
+                            <li>
+                                <input class="tag-checkbox" type="checkbox" id="tag-history" name="tags" value="history">
+                                <label class="tag-option" for="tag-history">History</label>
+                            </li>
+                            <li>
+                                <input class="tag-checkbox" type="checkbox" id="tag-mathematics" name="tags" value="mathematics">
+                                <label class="tag-option" for="tag-mathematics">Mathematics</label>
+                            </li>
+                        </ul>
+
+                        <div class="tag-included">
+                            <h3 class="included-heading">Included:</h3>
+                            <div class="tag-chips">
+                                    <span class="tag-chip chip-biology pill-btn teal-wash">
+                                        Biology
+                                        <label class="remove-tag" for="tag-biology" aria-label="Remove Biology tag">−</label>
+                                    </span>
+                                <span class="tag-chip chip-chemistry pill-btn teal-wash">
+                                        Chemistry
+                                        <label class="remove-tag" for="tag-chemistry" aria-label="Remove Chemistry tag">−</label>
+                                    </span>
+                                <span class="tag-chip chip-physics pill-btn teal-wash">
+                                        Physics
+                                        <label class="remove-tag" for="tag-physics" aria-label="Remove Physics tag">−</label>
+                                    </span>
+                                <span class="tag-chip chip-history pill-btn teal-wash">
+                                        History
+                                        <label class="remove-tag" for="tag-history" aria-label="Remove History tag">−</label>
+                                    </span>
+                                <span class="tag-chip chip-mathematics pill-btn teal-wash">
+                                        Mathematics
+                                        <label class="remove-tag" for="tag-mathematics" aria-label="Remove Mathematics tag">−</label>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<footer class="flow-footer">
+    <a class="footer-help pill-btn outline" href="help.html#help-details">Help?</a>
+    <div class="footer-theme-group">
+        <button class="theme-btn theme-dark" type="button" aria-label="Switch to dark mode" aria-pressed="true">⏾</button>
+        <button class="theme-btn theme-light" type="button" aria-label="Switch to light mode" aria-pressed="false">☼</button>
+    </div>
+    <div class="footer-logo">
+        <img src="img/logo.png" alt="AppName logo" style="width:100%;height:100%;object-fit:contain;" />
+    </div>
+</footer>
+
+</body>
+</html>

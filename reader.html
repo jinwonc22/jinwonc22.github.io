@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Reader · Stacks</title>
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/reader.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/interactions.js" defer></script>
+</head>
+<body class="flow-page">
+
+<header class="flow-header">
+    <a class="back-home pill-btn outline" href="details.html">Textbook Details</a>
+    <div class="header-banner hatch" aria-hidden="true"><span class="text-wrapper">Stacks - Textbook Reader</span></div>
+    <form class="header-search" role="search" action="search.html" method="get">
+        <label for="header-q" class="visually-hidden">Search Stacks</label>
+        <input class="search-field" id="header-q" name="q" type="search" placeholder='Try "textbook"' />
+        <button class="header-search-btn pill-btn teal" type="submit">Search</button>
+    </form>
+    <a class="sign-out pill-btn teal" href="login.html">Sign out?</a>
+</header>
+
+<main class="flow-main">
+    <h1 class="visually-hidden">Reader</h1>
+
+    <div class="reader-columns">
+
+        <!--         Annotations (left column) -->
+        <section class="reader-annotations" aria-label="Annotations">
+            <div class="annotation-card">
+                <h2 class="annotation-title"> Annotation 1 </h2>
+                <div class="annotation-actions">
+                    <button class="anno-edit pill-btn gold-wash" type="button">Edit</button>
+                    <button class="anno-delete pill-btn danger-wash" type="button">Delete</button>
+                </div>
+            </div>
+            <div class="annotation-card">
+                <h2 class="annotation-title">Annotation 2</h2>
+                <div class="annotation-actions">
+                    <button class="anno-edit pill-btn gold-wash" type="button">Edit</button>
+                    <button class="anno-delete pill-btn danger-wash" type="button">Delete</button>
+                </div>
+            </div>
+            <div class="annotation-card">
+                <h2 class="annotation-title">Annotation 3</h2>
+                <div class="annotation-actions">
+                    <button class="anno-edit pill-btn gold-wash" type="button">Edit</button>
+                    <button class="anno-delete pill-btn danger-wash" type="button">Delete</button>
+                </div>
+            </div>
+            <a class="add-annotation-btn pill-btn teal" href="#">Add annotation to current page</a>
+        </section>
+
+        <!--         Reading pane (middle column) — grows downward with content -->
+        <div class="reader-page-col" aria-label="Page content">
+            <div class="page-surface"></div>
+        </div>
+
+        <!--         Reader controls (right column) -->
+        <div class="reader-settings-wrap sidebar-wrap">
+            <button type="button" class="sidebar-toggle-label sidebar-toggle-btn" aria-label="Show or hide reader settings"
+                    aria-expanded="false" aria-controls="reader-settings-panel">☰</button>
+
+            <div class="collapsible overlay-sidebar from-right" hidden>
+                <aside class="reader-settings overlay-panel" id="reader-settings-panel" aria-label="Reader settings">
+                    <button type="button" class="overlay-close" aria-label="Close reader settings">×</button>
+                    <div>
+                        <div class="text-size-row">
+                            <p class="text-size-label">Text Size</p>
+                            <button class="text-size-confirm pill-btn teal" type="button" aria-label="Apply text size">✓</button>
+                        </div>
+                        <div class="seg-toggle font-toggle">
+                            <input type="radio" name="font-choice" id="font-1" checked>
+                            <label for="font-1">Font1</label>
+                            <input type="radio" name="font-choice" id="font-2">
+                            <label for="font-2">Font2</label>
+                            <input type="radio" name="font-choice" id="font-3">
+                            <label for="font-3">Font3</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="bookmarks-heading">Bookmarks</h2>
+                        <div class="bookmark-list">
+                            <a class="bookmark-item pill-btn outline" href="#">Bookmark1</a>
+                            <a class="bookmark-item pill-btn outline" href="#">Bookmark2</a>
+                            <a class="bookmark-item pill-btn outline" href="#">Bookmark3</a>
+                            <a class="bookmark-item pill-btn outline" href="#">Bookmark4</a>
+                        </div>
+                        <a class="add-bookmark-btn pill-btn teal" href="#">Add bookmark to current page</a>
+                    </div>
+
+                    <a class="go-to-page-btn pill-btn teal" href="details.html">Go to Book Details</a>
+
+                    <div class="page-jump-row">
+                        <label for="page-num" class="visually-hidden">Jump to page number</label>
+                        <input class="page-num-input search-field" id="page-num" name="page_number" type="number" placeholder="Page #" />
+                        <button class="skip-page-btn pill-btn teal" type="button">Skip to Page</button>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</main>
+
+<p class="page-indicator" aria-label="Current page">Page # / #</p>
+
+<footer class="flow-footer">
+    <a class="footer-help pill-btn outline" href="#">Help?</a>
+    <div class="footer-theme-group">
+        <button class="theme-btn theme-dark" type="button" aria-label="Switch to dark mode" aria-pressed="true">⏾</button>
+        <button class="theme-btn theme-light" type="button" aria-label="Switch to light mode" aria-pressed="false">☼</button>
+    </div>
+    <div class="footer-logo">
+        <img src="img/logo.png" alt="AppName logo" style="width:100%;height:100%;object-fit:contain;" />
+    </div>
+</footer>
+
+</body>
+</html>

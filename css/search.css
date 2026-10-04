@@ -1,0 +1,26 @@
+/* Flow-system, inherits functionality from components.css
+AI DISCLOSURE: Formatting/boilerplate by Figma's Anima Tool, debugged and reviewed by Claude AI.  */
+
+.flow-main h1 {
+    font-family: "Inter", Helvetica; font-weight: 400; color: var(--ink); font-size: 36px; margin: 0 0 12px;
+}
+#search-summary { font-size: 20px; color: var(--ink-soft); margin: 0 0 28px; min-height: 1.4em; }
+
+.results-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+.results-list li {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 20px 24px;
+}
+.results-list h2 { font-family: "Inter", Helvetica; font-weight: 600; font-size: 24px; margin: 0 0 6px; }
+.results-list h2 a { color: var(--teal-deep); }
+.results-list h2 a:hover { text-decoration: underline; }
+.results-list .result-meta { margin: 0 0 8px; color: var(--muted); font-size: 16px; }
+.results-list .result-blurb { margin: 0; color: var(--ink-soft); font-size: 18px; line-height: 1.5; }
+
+.empty-state {
+    background: var(--surface); border: 1px dashed var(--line); border-radius: 14px;
+    padding: 36px 28px; text-align: center;
+}
+.empty-state h2 { font-family: "Inter", Helvetica; font-weight: 600; font-size: 26px; margin: 0 0 10px; color: var(--ink); }
+.empty-state p { font-size: 20px; color: var(--ink-soft); margin: 0 0 24px; }
+.empty-link { display: inline-flex; height: 52px; padding: 0 28px; font-size: 20px; }

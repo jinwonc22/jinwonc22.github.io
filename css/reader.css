@@ -1,0 +1,72 @@
+/* Flow-system, inherits functionality from components.css
+AI DISCLOSURE: Formatting/boilerplate by Figma's Anima Tool, debugged and reviewed by Claude AI.  */
+
+.reader-columns {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+/* Annotations (left column) */
+.reader-annotations { flex: 0 0 340px; display: flex; flex-direction: column; gap: 16px; }
+.annotation-card { background: var(--surface); border: 1px solid var(--line); padding: 18px; }
+.annotation-title {
+    font-family: "Inter", Helvetica; font-weight: 400; color: var(--ink); font-size: 22px; margin: 0 0 12px;
+}
+.annotation-actions { display: flex; gap: 10px; }
+.anno-edit, .anno-delete { height: 44px; padding: 0 18px; font-size: 16px; }
+.add-annotation-btn { height: 48px; font-size: 16px; text-align: center; }
+
+/* Page surface (middle column) */
+.reader-page-col { flex: 1 1 420px; min-width: 320px; }
+.page-surface {
+    min-height: 900px;
+    background-color: var(--surface); border: 1px solid var(--line);
+    background-image: repeating-linear-gradient(var(--surface) 0 27px, var(--line-soft) 27px 28px);
+    padding: 20px 24px 80px;
+}
+
+/* Right sidebar: text size, font, bookmarks, details, page jump */
+.reader-settings-wrap { flex: 0 0 44px; }
+.reader-settings { display: flex; flex-direction: column; gap: 20px; }
+.text-size-row { display: flex; align-items: center; gap: 12px; }
+.text-size-label {
+    flex: 1 1 auto; height: 40px; background: var(--line-soft); border-radius: 40px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Inter", Helvetica; color: var(--ink); font-size: 18px;
+}
+.text-size-confirm { width: 60px; height: 40px; font-size: 18px; flex: 0 0 auto; }
+.font-toggle { position: static; display: flex; gap: 10px; }
+.font-toggle label { width: 90px; height: 40px; border-radius: 30px; font-size: 16px; }
+
+.bookmarks-heading {
+    font-family: "Inter", Helvetica; font-weight: 400; color: var(--ink); font-size: 22px; margin: 0 0 10px;
+}
+.bookmark-list { display: flex; flex-direction: column; gap: 8px; }
+.bookmark-item { height: 40px; font-size: 18px; }
+.add-bookmark-btn { height: 40px; border-radius: 40px; font-size: 15px; }
+.go-to-page-btn { height: 50px; border-radius: 40px; font-size: 20px; }
+
+.page-jump-row { display: flex; gap: 10px; }
+.page-num-input { flex: 1 1 auto; height: 40px; border-radius: 40px; font-size: 18px; text-align: center; }
+.skip-page-btn { flex: 0 0 auto; height: 40px; padding: 0 16px; border-radius: 40px; font-size: 16px; }
+
+/* Page-number indicator: fixed at the bottom at all times */
+.page-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    width: 220px; height: 50px;
+    background: var(--line-soft); border-radius: 20px;
+    box-shadow: 0 4px 14px rgba(32, 36, 43, 0.18);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Inter", Helvetica; color: var(--ink); font-size: 20px;
+}
+/* Wider settings panel so nothing on the right edge is clipped */
+.overlay-sidebar .reader-settings.overlay-panel { width: min(420px, 94vw); }
+.reader-settings > * { min-width: 0; }
+.page-num-input { min-width: 0; }

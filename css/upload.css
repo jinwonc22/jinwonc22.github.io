@@ -1,0 +1,28 @@
+/* Flow-system, inherits functionality from components.css
+AI DISCLOSURE: Formatting/boilerplate by Figma's Anima Tool, debugged and reviewed by Claude AI. */
+
+.upload-top { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 32px; }
+.attach-zone {
+    flex: 1 1 320px; min-height: 94px;
+    border: 1px dashed var(--line);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Inter", Helvetica; font-weight: 400; color: var(--muted); font-size: 22px;
+}
+.browse-file-btn { flex: 0 0 auto; height: 60px; padding: 0 28px; font-size: 20px; }
+
+.upload-layout { display: grid; grid-template-columns: 320px 1fr; gap: 40px; align-items: start; }
+.preview-col { display: flex; flex-direction: column; gap: 16px; }
+
+.file-preview { display: block; width: 100%; aspect-ratio: 3 / 4; }
+.file-preview .card-label { top: auto; bottom: 0; height: 30%; font-size: 32px; }
+.change-cover-btn { width: 100%; height: 52px; font-size: 18px; }
+
+.tags-heading {
+    font-family: "Inter", Helvetica; font-weight: 400; color: var(--ink); font-size: 34px;
+    margin: 8px 0 16px;
+}
+.tags-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.tag-search { width: 100%; height: 48px; font-size: 18px; padding: 0 18px; }
+
+.upload-actions { display: flex; gap: 20px; margin-top: 40px; flex-wrap: wrap; }
+.upload-btn, .cancel-btn { height: 72px; padding: 0 40px; font-size: 30px; flex: 1 1 220px; }

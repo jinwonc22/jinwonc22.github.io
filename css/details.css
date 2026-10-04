@@ -1,0 +1,32 @@
+/* Flow-system, inherits functionality from components.css */
+
+.details-layout {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Cover + Open (left column) */
+.cover-col { display: flex; flex-direction: column; gap: 16px; }
+.cover-box { display: block; width: 100%; aspect-ratio: 3 / 4; }
+.cover-box .card-label { top: auto; bottom: 0; height: 35%; font-size: 28px; }
+.change-cover-btn { width: 100%; height: 52px; font-size: 18px; }
+.open-btn { width: 100%; height: 60px; font-size: 24px; }
+
+/* Right column: fields + tags */
+.details-fields h1.visually-hidden { display: none; }
+.tags-heading {
+    font-family: "Inter", Helvetica; font-weight: 400; color: var(--ink); font-size: 34px;
+    margin: 8px 0 16px;
+}
+
+.tags-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.tag-search { width: 100%; height: 48px; font-size: 18px; padding: 0 18px; }
+/* Delete book (under Open) */
+.delete-btn { width: 100%; height: 56px; font-size: 20px; cursor: pointer; }
+
+/* Save button sits under each text box */
+.field-actions { display: flex; align-items: center; justify-content: flex-end; gap: 14px; margin-top: 10px; }
+.save-btn { height: 44px; padding: 0 28px; font-size: 18px; cursor: pointer; }
+.save-status { font-size: 16px; color: var(--teal-deep); }
