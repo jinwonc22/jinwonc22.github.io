@@ -192,15 +192,20 @@
                 const terms = value.toLowerCase().split(/\s+/).filter(Boolean);
                 let matches;
 
+                // If search is empty, show all items still
                 if (!terms.length) {
                     matches = records.slice();
                     records.forEach((r) => { r.el.style.order = ""; });
                     syncUrl("");
-                } else {
+                }
+                // search each record and push all matches
+                else {
                     matches = [];
                     records.forEach((r) => {
                         const haystack = r.title + " " + r.extra;
-                        if (!terms.every((t) => haystack.includes(t))) return;
+                        if (!terms.every((t) => haystack.includes(t))) {
+                            return;
+                        }
                         const titleHit = terms.every((t) => r.title.includes(t));
                         r.score = r.title.startsWith(terms[0]) && titleHit ? 0 : titleHit ? 1 : 2;
                         matches.push(r);
@@ -210,11 +215,14 @@
                     syncUrl(value);
                 }
 
+
+                // if the list has another page, add matches
                 if (pager) {
                     $(pager).pagination({
                         dataSource: matches,
                         pageSize: pageSize,
 
+                        // show matches
                         callback: function (data, pagination) {
                             page = pagination.pageNumber;
 
@@ -224,6 +232,7 @@
                                 r.el.hidden = !shown.has(r);
                             });
 
+                            // if there's no matches left
                             if (empty) {
                                 empty.hidden = matches.length > 0;
                             }
@@ -255,7 +264,9 @@
             if (form) {
                 form.addEventListener("submit", (e) => {
                     let samePage = true;
-                    try { samePage = new URL(form.action, window.location.href).pathname === window.location.pathname; }
+                    try {
+                        samePage = new URL(form.action, window.location.href).pathname === window.location.pathname;
+                    }
                     catch (err) { /* treat as same page */ }
                     if (samePage) { e.preventDefault(); page = 1; apply(); }
                 });

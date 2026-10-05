@@ -4,9 +4,7 @@
 (function ($) {
     "use strict";
 
-    /* ============================================================
-       TOOLTIP MESSAGES
-       ============================================================ */
+    /* TOOLTIP MESSAGES TODO: Add more messages specific to navigations and editing details */
 
     var TOOLTIP_MESSAGES = {
         ".brand": "Go to the home page",
@@ -43,9 +41,7 @@
     };
 
 
-    /* ============================================================
-       TOOLTIPS
-       ============================================================ */
+    /* TOOLTIPS */
 
     function initTooltips() {
         if (typeof window.tippy !== "function") {

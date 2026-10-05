@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (username === "admin" && password === "password") {
             alert("Sign in successful!");
-        } else {
+        }
+        else {
             alert("Invalid username or password.");
         }
     });

@@ -126,64 +126,6 @@ a.card-cover:focus-visible {
 /*}*/
 
 
- /*HEADERS AND FOOTERS*/
-
-
-/* Shared header: Contains back button, banner, and sign out */
-.frame .back-home { position: absolute; top: 13px; left: 18px; width: 400px; height: 60px; font-size: 30px; }
-.frame .header-banner {
-    position: absolute; top: 0; left: 436px; width: 602px; height: 94px;
-    display: flex; align-items: center; justify-content: center; border: 1px solid var(--line);
-}
-.frame .header-banner .text-wrapper { font-family: "Inter", Helvetica; font-weight: 400; color: var(--ink); font-size: 60px; }
-.frame .group-signout { position: absolute; top: 0; left: 1096px; width: 331px; height: 94px; z-index: 2; }
-.frame .sign-out { position: absolute; top: 11px; left: 23px; width: 283px; font-size: 60px; }
-
-/* Shared header: Contains
- - Help Button
- - Theme change (TODO: doesnt work yet)
- - Logo */
-.frame .app-footer {
-    position: absolute; bottom: 0; left: 0; width: 1440px; height: 94px;
-    background: var(--surface); border-top: 1px solid var(--line);
-}
-.frame .footer-help { position: absolute; bottom: 17px; left: 18px; width: 400px; height: 60px; font-size: 30px; z-index: 2; }
-
-/* TODO: Theme toggle shared across all footers */
-.frame .theme-btn {
-    position: absolute; width: 50px; height: 50px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 24px; border: 1px solid var(--line); z-index: 2;
-}
-.frame .theme-dark { background: #1c1c1c; color: #ffffff; border: none; box-shadow: 0 0 0 2px var(--teal); }
-.frame .theme-light { background: #ffffff; color: var(--ink); }
-.frame .footer-theme-dark { bottom: 22px; left: 645px; }
-.frame .footer-theme-light { bottom: 22px; left: 715px; }
-
-.frame .footer-logo {
-    position: absolute; bottom: 0; left: 1206px; width: 219px; height: 94px;
-    display: flex; align-items: center; justify-content: center; border: 1px solid var(--line);
-    z-index: 2;
-}
-.frame .footer-logo span { font-family: "Inter", Helvetica; font-weight: 400; color: var(--muted); font-size: 45px; }
-
-
-
-
-
-
-/* SIDEBAR MENU TOGGLE */
-.frame .sidebar-toggle { position: absolute; opacity: 0; width: 1px; height: 1px; }
-.frame .sidebar-toggle-label {
-    position: absolute; width: 48px; height: 48px; border-radius: 10px;
-    background: var(--surface); border: 1px solid var(--line); cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px; color: var(--ink-soft); z-index: 3;
-}
-.frame .sidebar-toggle:checked + .sidebar-toggle-label { background: var(--teal-wash); border-color: var(--teal); color: var(--teal-deep); }
-.frame .sidebar-toggle:focus-visible + .sidebar-toggle-label { outline: 2px solid var(--teal); outline-offset: 2px; }
-.frame .sidebar-toggle:not(:checked) ~ .collapsible { display: none; }
-
 /* Sidebar toggle button currently in library reader. */
 .sidebar-toggle-label {
     width: 44px; height: 44px; padding: 0; border-radius: 10px;
@@ -376,28 +318,25 @@ TODO: Add More Tags Here*/
     font-family: "Inter", Helvetica; font-size: 18px; color: var(--muted);
 }
 
-/* Tooltips */
-.js-tooltip {
-    position: fixed;
-    top: 0; left: 0;
-    z-index: 1000;
-    max-width: 280px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    background: var(--ink);
-    color: #ffffff;
-    font-family: "Inter", Helvetica; font-size: 14px; line-height: 1.35;
-    box-shadow: 0 4px 14px rgba(32, 36, 43, 0.25);
-    pointer-events: none;
-    animation: tooltip-in 0.12s ease;
-}
-@keyframes tooltip-in { from { opacity: 0; } to { opacity: 1; } }
-/* The hovered element gets this class while its tooltip is showing */
-.tooltip-active { box-shadow: 0 0 0 3px rgba(31, 92, 92, 0.22); }
-.page-surface.tooltip-active, .person-row.tooltip-active, .sidebar-backdrop.tooltip-active { box-shadow: none; }
-@media (prefers-reduced-motion: reduce) {
-    .js-tooltip { animation: none; }
-}
+/* Tooltips UNUSED */
+/*.js-tooltip {*/
+/*    position: fixed;*/
+/*    top: 0; left: 0;*/
+/*    z-index: 1000;*/
+/*    max-width: 280px;*/
+/*    padding: 8px 12px;*/
+/*    border-radius: 8px;*/
+/*    background: var(--ink);*/
+/*    color: #ffffff;*/
+/*    font-family: "Inter", Helvetica; font-size: 14px; line-height: 1.35;*/
+/*    box-shadow: 0 4px 14px rgba(32, 36, 43, 0.25);*/
+/*    pointer-events: none;*/
+/*    animation: tooltip-in 0.12s ease;*/
+/*}*/
+/*@keyframes tooltip-in { from { opacity: 0; } to { opacity: 1; } }*/
+/*!* The hovered element gets this class while its tooltip is showing *!*/
+/*.tooltip-active { box-shadow: 0 0 0 3px rgba(31, 92, 92, 0.22); }*/
+/*.page-surface.tooltip-active, .person-row.tooltip-active, .sidebar-backdrop.tooltip-active { box-shadow: none; }*/
 
 /* Header's search form */
 .flow-header .header-banner { min-width: 0; }
@@ -405,10 +344,6 @@ TODO: Add More Tags Here*/
 .header-search .search-field { flex: 1 1 auto; min-width: 0; height: 48px; font-size: 16px; padding: 0 16px; }
 .header-search .header-search-btn { flex: 0 0 auto; height: 48px; padding: 0 20px; font-size: 18px; }
 .flow-header .header-banner + .header-search { margin-left: 0; }
-@media (max-width: 900px) {
-    .flow-header { flex-wrap: wrap; }
-    .header-search { order: 3; flex: 1 1 100%; margin-left: 0; }
-}
 
 /* Overlay sidebars (library filters, reader settings) TODO: fix weird tooltip bug? */
 .overlay-sidebar { position: fixed; inset: 0; z-index: 50; }
@@ -436,7 +371,7 @@ TODO: Add More Tags Here*/
     font-size: 24px; line-height: 1; cursor: pointer;
 }
 .overlay-close:hover { background: #dcd6c6; color: var(--ink); }
-body.sidebar-open, body.modal-open { overflow: hidden; }
+body.sidebar-open { overflow: hidden; }
 
 @keyframes overlay-fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes overlay-in-left { from { transform: translateX(-100%); } to { transform: none; } }
@@ -444,12 +379,6 @@ body.sidebar-open, body.modal-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
     .overlay-sidebar .sidebar-backdrop, .overlay-sidebar .overlay-panel { animation: none; }
 }
-
-/* Pagination (built by js/App.js for lists with data-page-size) TODO: fix weird placement bug? */
-.pagination { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin-top: 32px; }
-.pagination .page-summary { flex: 1 0 100%; text-align: center; margin: 0 0 4px; color: var(--muted); font-size: 16px; }
-.pagination .page-btn { height: 44px; min-width: 44px; padding: 0 14px; font-size: 18px; cursor: pointer; }
-.pagination .page-btn:disabled { opacity: 0.45; cursor: not-allowed; }
 
 /* Confirmation dialog  UNUSED*/
 /*.pill-btn.danger { background: var(--danger); color: #ffffff; }*/
